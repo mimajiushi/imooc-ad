@@ -55,10 +55,12 @@ public class AdPlanServiceImpl implements IAdPlanService {
         AdPlan oldPlan = planRepository.findByUserIdAndPlanName(
                 request.getUserId(), request.getPlanName()
         );
+        // 确保不会存在相同的推广计划
         if (oldPlan != null) {
             throw new AdException(Constants.ErrorMsg.SAME_NAME_PLAN_ERROR);
         }
 
+        // 这里可以考虑用beanutils
         AdPlan newAdPlan = planRepository.save(
                 new AdPlan(request.getUserId(), request.getPlanName(),
                         CommonUtils.parseStringDate(request.getStartDate()),

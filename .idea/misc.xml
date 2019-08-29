@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/imooc-ad-service/pom.xml" />
         <option value="$PROJECT_DIR$/imooc-ad-service/ad-sponsor/pom.xml" />
+        <option value="$PROJECT_DIR$/imooc-ad-service/ad-search/pom.xml" />
       </list>
     </option>
   </component>

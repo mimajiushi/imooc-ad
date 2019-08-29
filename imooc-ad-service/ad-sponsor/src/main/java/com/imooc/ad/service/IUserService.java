@@ -6,6 +6,7 @@ import com.imooc.ad.vo.CreateUserResponse;
 
 /**
  * Created by Qinyi.
+ * 用户service
  */
 public interface IUserService {
 

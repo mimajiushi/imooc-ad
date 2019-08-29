@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * Created by Qinyi.
+ * fixme 这个工具类应该放到common模块里
  */
 public class CommonUtils {
 

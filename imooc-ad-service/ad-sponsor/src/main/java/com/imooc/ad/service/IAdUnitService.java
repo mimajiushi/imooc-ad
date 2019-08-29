@@ -14,6 +14,7 @@ import com.imooc.ad.vo.CreativeUnitResponse;
 
 /**
  * Created by Qinyi.
+ * 推广单元service
  */
 public interface IAdUnitService {
 
@@ -22,12 +23,21 @@ public interface IAdUnitService {
     AdUnitKeywordResponse createUnitKeyword(AdUnitKeywordRequest request)
         throws AdException;
 
+    /**
+     * 推广单元与兴趣
+     */
     AdUnitItResponse createUnitIt(AdUnitItRequest request)
         throws AdException;
 
+    /**
+     * 推广单元与省市
+     */
     AdUnitDistrictResponse createUnitDistrict(AdUnitDistrictRequest request)
         throws AdException;
 
+    /**
+     * 推广单元与创意
+     */
     CreativeUnitResponse createCreativeUnit(CreativeUnitRequest request)
         throws AdException;
 }

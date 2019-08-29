@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by Qinyi.
+ * 推广计划service
  */
 public interface IAdPlanService {
 
@@ -29,7 +30,7 @@ public interface IAdPlanService {
     AdPlanResponse updateAdPlan(AdPlanRequest request) throws AdException;
 
     /**
-     * <h2>删除推广计划</h2>
+     * <h2>删除推广计划（软删除，改变状态）</h2>
      * */
     void deleteAdPlan(AdPlanRequest request) throws AdException;
 }
