@@ -24,11 +24,16 @@ import java.util.stream.Collectors;
 
 /**
  * Created by Qinyi.
+ * 索引加载，文件相当于持久化
  */
 @Component
+// 因为AdLevelDataHandler 中使用了dataTable（主要原因是因为AdLevelDataHandler的静态方法无法在一开始就加载dataTable? fixme ）
 @DependsOn("dataTable")
 public class IndexFileLoader {
 
+    /**
+     * 依赖完成注入之后执行
+     */
     @PostConstruct
     public void init() {
 
@@ -105,9 +110,8 @@ public class IndexFileLoader {
 
     private List<String> loadDumpData(String fileName) {
 
-        try (BufferedReader br = Files.newBufferedReader(
-                Paths.get(fileName)
-        )) {
+        try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
+            //todo 灵活运用新特性
             return br.lines().collect(Collectors.toList());
         } catch (IOException ex) {
             throw new RuntimeException(ex.getMessage());
