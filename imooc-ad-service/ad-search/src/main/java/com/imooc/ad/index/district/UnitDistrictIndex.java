@@ -1,8 +1,8 @@
 package com.imooc.ad.index.district;
 
 import com.imooc.ad.index.IndexAware;
-import com.imooc.ad.search.vo.feature.DistrictFeature;
 import com.imooc.ad.utils.CommonUtils;
+import com.imooc.ad.vo.feature.DistrictFeature;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Component;

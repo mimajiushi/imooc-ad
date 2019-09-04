@@ -49,17 +49,11 @@ public class UnitKeywordIndex implements IndexAware<String, Set<Long>> {
 
         log.info("UnitKeywordIndex, before add: {}", unitKeywordMap);
 
-        Set<Long> unitIdSet = CommonUtils.getorCreate(
-                key, keywordUnitMap,
-                ConcurrentSkipListSet::new
-        );
+        Set<Long> unitIdSet = CommonUtils.getorCreate(key, keywordUnitMap, ConcurrentSkipListSet::new);
         unitIdSet.addAll(value);
 
         for (Long unitId : value) {
-            Set<String> keywordSet = CommonUtils.getorCreate(
-                    unitId, unitKeywordMap,
-                    ConcurrentSkipListSet::new
-            );
+            Set<String> keywordSet = CommonUtils.getorCreate(unitId, unitKeywordMap, ConcurrentSkipListSet::new);
             keywordSet.add(key);
         }
 
@@ -77,18 +71,11 @@ public class UnitKeywordIndex implements IndexAware<String, Set<Long>> {
 
         log.info("UnitKeywordIndex, before delete: {}", unitKeywordMap);
 
-        Set<Long> unitIds = CommonUtils.getorCreate(
-                key, keywordUnitMap,
-                ConcurrentSkipListSet::new
-        );
+        Set<Long> unitIds = CommonUtils.getorCreate(key, keywordUnitMap, ConcurrentSkipListSet::new);
         unitIds.removeAll(value);
 
         for (Long unitId : value) {
-
-            Set<String> keywordSet = CommonUtils.getorCreate(
-                    unitId, unitKeywordMap,
-                    ConcurrentSkipListSet::new
-            );
+            Set<String> keywordSet = CommonUtils.getorCreate(unitId, unitKeywordMap, ConcurrentSkipListSet::new);
             keywordSet.remove(key);
         }
 
@@ -101,7 +88,7 @@ public class UnitKeywordIndex implements IndexAware<String, Set<Long>> {
                 && CollectionUtils.isNotEmpty(unitKeywordMap.get(unitId))) {
 
             Set<String> unitKeywords = unitKeywordMap.get(unitId);
-
+            //判断是否子集
             return CollectionUtils.isSubCollection(keywords, unitKeywords);
         }
 

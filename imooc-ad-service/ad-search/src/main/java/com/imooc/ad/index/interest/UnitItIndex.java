@@ -40,18 +40,12 @@ public class UnitItIndex implements IndexAware<String, Set<Long>> {
 
         log.info("UnitItIndex, before add: {}", unitItMap);
 
-        Set<Long> unitIds = CommonUtils.getorCreate(
-                key, itUnitMap,
-                ConcurrentSkipListSet::new
-        );
+        Set<Long> unitIds = CommonUtils.getorCreate(key, itUnitMap, ConcurrentSkipListSet::new);
         unitIds.addAll(value);
 
         for (Long unitId : value) {
 
-            Set<String> its = CommonUtils.getorCreate(
-                    unitId, unitItMap,
-                    ConcurrentSkipListSet::new
-            );
+            Set<String> its = CommonUtils.getorCreate(unitId, unitItMap, ConcurrentSkipListSet::new);
             its.add(key);
         }
 
@@ -69,17 +63,11 @@ public class UnitItIndex implements IndexAware<String, Set<Long>> {
 
         log.info("UnitItIndex, before delete: {}", unitItMap);
 
-        Set<Long> unitIds = CommonUtils.getorCreate(
-                key, itUnitMap,
-                ConcurrentSkipListSet::new
-        );
+        Set<Long> unitIds = CommonUtils.getorCreate(key, itUnitMap, ConcurrentSkipListSet::new);
         unitIds.removeAll(value);
 
         for (Long unitId : value) {
-            Set<String> itTagSet = CommonUtils.getorCreate(
-                    unitId, unitItMap,
-                    ConcurrentSkipListSet::new
-            );
+            Set<String> itTagSet = CommonUtils.getorCreate(unitId, unitItMap, ConcurrentSkipListSet::new);
             itTagSet.remove(key);
         }
 
@@ -92,7 +80,6 @@ public class UnitItIndex implements IndexAware<String, Set<Long>> {
                 && CollectionUtils.isNotEmpty(unitItMap.get(unitId))) {
 
             Set<String> unitKeywords = unitItMap.get(unitId);
-
             return CollectionUtils.isSubCollection(itTags, unitKeywords);
         }
 

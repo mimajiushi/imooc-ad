@@ -4,6 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.PriorityOrdered;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -11,18 +12,19 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by Qinyi.
+ * 这是索引服务缓存的javabean
+ * ApplicationContextAware: 为了使用ApplicationContext(上下文)
+ * PriorityOrdered: 优先级排序(可以使用@Order代替？)
  */
 @Component
 public class DataTable implements ApplicationContextAware, PriorityOrdered {
 
     private static ApplicationContext applicationContext;
 
-    public static final Map<Class, Object> dataTableMap =
-            new ConcurrentHashMap<>();
+    public static final Map<Class, Object> dataTableMap = new ConcurrentHashMap<>();
 
     @Override
-    public void setApplicationContext(
-            ApplicationContext applicationContext) throws BeansException {
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         DataTable.applicationContext = applicationContext;
     }
 
