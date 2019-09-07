@@ -19,6 +19,7 @@ public enum OpType {
      * @return 操作类型枚举
      */
     public static OpType to(EventType eventType) {
+        //
         if (EventType.isUpdate(eventType)) {
             return UPDATE;
         }

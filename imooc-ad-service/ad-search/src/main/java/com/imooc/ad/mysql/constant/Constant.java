@@ -7,8 +7,9 @@ import java.util.Map;
 /**
  * @author yuwen
  * @date 2019/1/31
+ * 每个表都定义一个内部类
  */
-public class DBConstant {
+public class Constant {
 
     private static final String DB_NAME = "ad_data";
 
@@ -86,6 +87,7 @@ public class DBConstant {
         map.put(AD_UNIT_IT_TABLE_INFO.TABLE_NAME, DB_NAME);
         map.put(AD_UNIT_TABLE_INFO.TABLE_NAME, DB_NAME);
         map.put(AD_UNIT_KEYWORD_TABLE_INFO.TABLE_NAME, DB_NAME);
+        // 返回只读视图
         TABLE_2_DB = Collections.unmodifiableMap(map);
 
     }
