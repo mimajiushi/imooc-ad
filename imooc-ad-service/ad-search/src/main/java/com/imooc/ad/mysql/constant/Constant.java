@@ -31,8 +31,8 @@ public class Constant {
         public static final String COLUMN_ID = "id";
         public static final String COLUMN_TYPE = "type";
         public static final String COLUMN_MATERIAL_TYPE = "material_type";
-        public static final String COLUMN_height = "height";
-        public static final String COLUMN_width = "width";
+        public static final String COLUMN_HEIGHT = "height";
+        public static final String COLUMN_WIDTH = "width";
         public static final String COLUMN_AUDIT_STATUS = "audit_status";
         public static final String COLUMN_URL = "url";
     }

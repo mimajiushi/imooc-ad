@@ -25,6 +25,10 @@ public class CreativeIndex implements IndexAware<Long, CreativeObject> {
         objectMap = new ConcurrentHashMap<>();
     }
 
+    /**
+     * 根据创意idid获取创意类型
+     * @param  adIds 创意id集合
+     */
     public List<CreativeObject> fetch(Collection<Long> adIds) {
 
         if (CollectionUtils.isEmpty(adIds)) {

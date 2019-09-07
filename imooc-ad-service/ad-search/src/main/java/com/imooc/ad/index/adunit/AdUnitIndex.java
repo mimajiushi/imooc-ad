@@ -32,8 +32,7 @@ public class AdUnitIndex implements IndexAware<Long, AdUnitObject> {
         Set<Long> adUnitIds = new HashSet<>();
 
         objectMap.forEach((k, v) -> {
-            if (AdUnitObject.isAdSlotTypeOK(positionType,
-                    v.getPositionType())) {
+            if (AdUnitObject.isAdSlotTypeOK(positionType, v.getPositionType())) {
                 adUnitIds.add(k);
             }
         });
@@ -41,6 +40,9 @@ public class AdUnitIndex implements IndexAware<Long, AdUnitObject> {
         return adUnitIds;
     }
 
+    /**
+     * 根据id获取索引数据
+     */
     public List<AdUnitObject> fetch(Collection<Long> adUnitIds) {
 
         if (CollectionUtils.isEmpty(adUnitIds)) {
@@ -61,6 +63,9 @@ public class AdUnitIndex implements IndexAware<Long, AdUnitObject> {
         return result;
     }
 
+    /**
+     * todo 下面的key忘记是什么东西了，系统完成后补上去
+     */
     @Override
     public AdUnitObject get(Long key) {
         return objectMap.get(key);

@@ -43,6 +43,7 @@ public class CommonUtils {
                     "EEE MMM dd HH:mm:ss zzz yyyy",
                     Locale.US
             );
+            //fixme 这种方法不是很好，不应该使用减法更改时间，应该更改系统的时间，mysql也同步系统时间
             return DateUtils.addHours(
                     dateFormat.parse(dateString),
                     -8

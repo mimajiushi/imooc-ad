@@ -1,4 +1,4 @@
-package com.imooc.ad.vo.feature;
+package com.imooc.ad.search.vo.feature;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,8 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * 维度限制
- *
- * @author yuwen
- * @date 2019/2/1
+ * Created by Qinyi.
+ * 地域匹配
  */
 @Data
 @NoArgsConstructor
@@ -23,6 +21,7 @@ public class DistrictFeature {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class ProvinceAndCity {
+
         private String province;
         private String city;
     }

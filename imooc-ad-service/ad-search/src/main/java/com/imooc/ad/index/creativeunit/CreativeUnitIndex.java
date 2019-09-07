@@ -90,6 +90,7 @@ public class CreativeUnitIndex implements
         log.info("after delete: {}", objectMap);
     }
 
+    /** 通过推广单元返回创意的id列表 **/
     public List<Long> selectAds(List<AdUnitObject> unitObjects) {
 
         if (CollectionUtils.isEmpty(unitObjects)) {

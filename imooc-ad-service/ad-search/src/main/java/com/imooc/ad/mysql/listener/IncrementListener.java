@@ -24,7 +24,7 @@ import java.util.Map;
 @Component
 public class IncrementListener implements Ilistener {
 
-//    @Resource(name = "kafkaSender")
+    @Resource(name = "kafkaSender")
     private ISender sender;
 
     private final AggregationListener aggregationListener;

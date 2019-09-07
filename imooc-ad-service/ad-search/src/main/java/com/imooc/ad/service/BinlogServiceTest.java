@@ -26,12 +26,12 @@ public class BinlogServiceTest {
 //    [11, 10, 奔驰]
 //]}
 
-
 //    Write---------------
 //    WriteRowsEventData{tableId=70, includedColumns={0, 1, 2, 3, 4, 5, 6, 7}, rows=[
 //    [12, 10, plan, 1, Tue Jan 01 08:00:00 CST 2019, Tue Jan 01 08:00:00 CST 2019, Tue Jan 01 08:00:00 CST 2019, Tue Jan 01 08:00:00 CST 2019]
 //]}
 
+    // todo 这里的日期可能根据电脑不同而不同
     // Tue Jan 01 08:00:00 CST 2019
 
     public static void main(String[] args) throws Exception {

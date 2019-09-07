@@ -47,8 +47,10 @@ adconf:
     port: 3306
     username: root
     password: 123456
-    binlogName: binlog.000038
-    position: 60451
+#    先不填
+    binlogName: ""
+#    -1代表从当前位置开始
+    position: -1
 
   kafka:
     topic: ad-search-mysql-data

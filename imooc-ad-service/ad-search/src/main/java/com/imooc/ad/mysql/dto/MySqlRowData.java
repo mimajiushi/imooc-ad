@@ -25,7 +25,7 @@ public class MySqlRowData {
     private OpType opType;
 
     /**
-     * 这里就是after
+     * 这里就是after，列名-》数据值
      */
     private List<Map<String, String>> fieldValueMap = new ArrayList<>();
 }

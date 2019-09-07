@@ -59,6 +59,9 @@ public class AdUnitObject {
         return (positionType & AdUnitConstants.POSITION_TYPE.TIEPIAN_POST) > 0;
     }
 
+    /**
+     * 判断是否是贴片广告
+     */
     public static boolean isAdSlotTypeOK(int adSlotType, int positionType) {
 
         switch (adSlotType) {
