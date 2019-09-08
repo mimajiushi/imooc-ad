@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/imooc-ad-service/pom.xml" />
         <option value="$PROJECT_DIR$/imooc-ad-service/ad-sponsor/pom.xml" />
         <option value="$PROJECT_DIR$/imooc-ad-service/ad-search/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-study/pom.xml" />
       </list>
     </option>
   </component>
