@@ -27,6 +27,11 @@ public class AdUnitIndex implements IndexAware<Long, AdUnitObject> {
         objectMap = new ConcurrentHashMap<>();
     }
 
+    /**
+     *
+     * @param positionType
+     * @return
+     */
     public Set<Long> match(Integer positionType) {
 
         Set<Long> adUnitIds = new HashSet<>();

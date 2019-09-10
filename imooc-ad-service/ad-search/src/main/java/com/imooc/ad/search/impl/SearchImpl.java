@@ -39,13 +39,15 @@ import java.util.Set;
 @Service
 public class SearchImpl implements ISearch {
 
-    public SearchResponse fallback(SearchRequest request, Throwable e) {
-        return null;
-    }
+//    public SearchResponse fallback(SearchRequest request, Throwable e) {
+//        return null;
+//    }
 
     @Override
-    // todo 弄明白@HystrixCommand的作用
-    @HystrixCommand(fallbackMethod = "fallback")
+    // todo 弄明白@HystrixCommand的作用   实现断路的作用，方法出现错误时触发fallback函数，fallback函数必须在此类中定义
+    // 由于HystrixCommand的实现是要将异常抛到Hystrix本身的线程池中执行，所以效率会比较低，企业中是比较少用的
+    // 大部分情况下都是与feign结合使用，就是类似于SponsorClientHystrix
+//    @HystrixCommand(fallbackMethod = "fallback")
     public SearchResponse fetchAds(SearchRequest request) {
 
         // 取出请求的广告位信息

@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 @EnableEurekaClient
 @EnableHystrix //启动熔断 降级服务
-@EnableCircuitBreaker //启动断路器
+@EnableCircuitBreaker //启动断路器，拦截有注解HystrixCommand的方法
 @EnableDiscoveryClient
 @EnableHystrixDashboard // 监控
 @SpringBootApplication

@@ -14,8 +14,7 @@ import java.util.List;
 /**
  * Created by Qinyi.
  */
-@FeignClient(value = "eureka-client-ad-sponsor",
-        fallback = SponsorClientHystrix.class)
+@FeignClient(value = "eureka-client-ad-sponsor", fallback = SponsorClientHystrix.class)
 public interface SponsorClient {
 
     @PostMapping(value = "/ad-sponsor/get/adPlan")
